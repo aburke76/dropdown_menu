@@ -4,8 +4,9 @@
 
 :root {
     --black: #191716;
-    --gold: #e6af2e;
+    --green: #33662d;
     --gray: #e0e2db;
+    --darkergray: #a7ac9c;
 }
 
 @font-face {
@@ -19,25 +20,79 @@
 }
 
 body {
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: var(--gray);
+    font-family: "Rale";
+    margin: 0;
 }
 
 h1 {
+    grid-column: 1 / 2;
     font-family: "H1";
     letter-spacing: 0.3rem;
+    color: var(--darkergray);
+    margin-left: 2rem;
+}
+
+#dropdown {
+    position: absolute;
+    padding: 0% 1rem;
+    border-bottom-left-radius: 0.5rem;
+    background-color: var(--green);
+    float: right;
+    z-index: 1;
+    right: 0.01rem;
+    top: 4rem;
 }
 
 ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-left: 0;
+}
+
+li {
+    border: 1px solid var(--gray);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0;
+    color: var(--gray);
 }
 
 .nav-bar {
+    display: grid;
+    grid-template-columns: 2fr, 1fr;
+    width: 100%;
+    background-color: var(--green);
+}
+
+.menu {
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    place-self: center right;
+    padding-right: 2rem;
+    color: var(--darkergray);
+}
+.menu-header {
     display: flex;
     gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.hidden {
+    display: none;
 }
 
 #menu-icon:hover {
     cursor: pointer;
+}
+
+.carousel-title {
+    color: var(--green);
 }
