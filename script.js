@@ -1,5 +1,4 @@
 const menuIcon = document.querySelector("#menu-icon");
-const dropdown = document.querySelector("#dropdown");
 
 menuIcon.addEventListener("click", () => {
     toggleMenu();
@@ -16,3 +15,7 @@ function toggleMenu() {
         menuIcon.classList.add("fa-solid", "fa-chevron-up");
     }
 }
+
+function pictureRight() {}
+function pictureLeft() {}
+function choosePicture() {}
