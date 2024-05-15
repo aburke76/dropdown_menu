@@ -27,6 +27,7 @@ body {
     background-color: var(--gray);
     font-family: "Rale";
     margin: 0;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -89,6 +90,9 @@ li {
     display: none;
 }
 
+.up {
+    display: none;
+}
 #menu-icon:hover {
     cursor: pointer;
 }
@@ -99,39 +103,50 @@ li {
 }
 
 .bottom-text {
-    margin-top: 420px;
+    margin-top: 5px;
 }
 
 img {
-    object-fit: contain;
-    height: 100%;
-    width: 100%;
+    object-fit: cover;
+    z-index: 1;
 }
 
 .slides {
+    display: flex;
     width: 4000px;
-    overflow: hidden;
+    height: auto;
+    gap: 1rem;
 }
 
-.picture-frame {
-    position: absolute;
-    width: 100%;
+.picture-frame,
+img {
+    position: relative;
+    width: 500px;
     height: 375px;
-    z-index: 1;
+    z-index: 2;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.right-arrow {
+.nav-arrows {
     position: absolute;
     top: 50%;
-    right: 20%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+.right-arrow {
+    position: absolute;
+    right: 0.25rem;
 }
 
 .left-arrow {
     position: absolute;
-    top: 50%;
-    left: 20%;
+    left: 0.25rem;
 }
 
 .arrow:hover {
@@ -142,10 +157,27 @@ img {
     display: flex;
     gap: 0.5rem;
     position: absolute;
-    top: 105%;
-    left: 45%;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
 }
 
-.fa-circle:hover {
+.nav-arrows,
+.dots {
+    z-index: 3;
+}
+
+.nav-arrows:hover,
+.nav-arrows:focus,
+.dots:hover,
+.dots:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: none;
+    border: transparent;
+}
+.fa-circle {
     cursor: pointer;
 }
