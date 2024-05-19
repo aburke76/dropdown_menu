@@ -112,6 +112,7 @@ img {
 }
 
 .slides {
+    position: relative;
     display: flex;
     width: 4000px;
     height: auto;
@@ -119,13 +120,20 @@ img {
 }
 
 .picture-frame,
-img {
+img,
+.nav-btns {
     position: relative;
     width: 500px;
     height: 375px;
-    z-index: 2;
+    z-index: 3;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.nav-btns {
+    position: absolute;
+    z-index: 4;
+    background-color: transparent;
 }
 
 .nav-arrows {
@@ -137,6 +145,7 @@ img {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 0.5rem;
     padding: 0 0.5rem;
+    z-index: 2;
 }
 
 .right-arrow {
@@ -163,6 +172,7 @@ img {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 0.5rem;
     padding: 0.5rem;
+    z-index: 3;
 }
 
 .nav-arrows,
