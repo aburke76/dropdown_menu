@@ -10,6 +10,23 @@ menuIcon.addEventListener("click", () => {
     toggleMenu();
 });
 
+setInterval(() => {
+    const shownImg = imgInFrame();
+    shownImg.classList.toggle("hidden");
+
+    if (shownImg.id == 7) {
+        images[0].classList.toggle("hidden");
+        dots[dots.length - 1].classList.toggle("fa-regular");
+        dots[dots.length - 1].classList.toggle("fa-solid");
+        dots[0].classList.toggle("fa-regular");
+        dots[0].classList.toggle("fa-solid");
+    } else {
+        const next = parseInt(shownImg.id) + 1;
+        images[next - 1].classList.toggle("hidden");
+        changeDot(shownImg, 1);
+    }
+}, 5000);
+
 nextBtn.addEventListener("click", () => {
     const shownImg = imgInFrame();
     shownImg.classList.toggle("hidden");
@@ -106,5 +123,22 @@ function changeDot(img, num) {
         findDot().classList.toggle("fa-solid");
         dots[nextDotId - 1].classList.toggle("fa-regular");
         dots[nextDotId - 1].classList.toggle("fa-solid");
+    }
+}
+
+function autoNext() {
+    const shownImg = imgInFrame();
+    shownImg.classList.toggle("hidden");
+
+    if (shownImg.id == 7) {
+        images[0].classList.toggle("hidden");
+        dots[dots.length - 1].classList.toggle("fa-regular");
+        dots[dots.length - 1].classList.toggle("fa-solid");
+        dots[0].classList.toggle("fa-regular");
+        dots[0].classList.toggle("fa-solid");
+    } else {
+        const next = parseInt(shownImg.id) + 1;
+        images[next - 1].classList.toggle("hidden");
+        changeDot(shownImg, 1);
     }
 }
