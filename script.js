@@ -45,7 +45,15 @@ prevBtn.addEventListener("click", () => {
 });
 
 dots.forEach((dot) => {
-    dot.addEventListener(() => {});
+    dot.addEventListener("click", () => {
+        const foundImg = findImgbyId(dot.dataset.id);
+        imgInFrame().classList.toggle("hidden");
+        foundImg.classList.toggle("hidden");
+        findDot().classList.toggle("fa-regular");
+        findDot().classList.toggle("fa-solid");
+        dot.classList.toggle("fa-regular");
+        dot.classList.toggle("fa-solid");
+    });
 });
 
 function imgInFrame() {
@@ -70,6 +78,16 @@ function toggleMenu() {
     }
 }
 
+function findImgbyId(id) {
+    let foundImg;
+    images.forEach((img) => {
+        if (img.id === id) {
+            foundImg = img;
+        }
+    });
+    return foundImg;
+}
+
 function findDot() {
     let solidDot;
     dots.forEach((dot) => {
@@ -82,7 +100,6 @@ function findDot() {
 
 function changeDot(img, num) {
     let nextDotId;
-
     if (img.id === findDot().dataset.id) {
         nextDotId = parseInt(findDot().dataset.id) + num;
         findDot().classList.toggle("fa-regular");
